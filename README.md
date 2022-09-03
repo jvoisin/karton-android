@@ -18,10 +18,15 @@ Extract various information from APK.
 {
     "type": "sample",
     "kind": "analyzed",
+    "sample": <Resource>,
     "payload": {
-        "sample": <Resource>,
-        "certificate": <string>,
-        "package": <string>
+	"attributes": {
+          "certificate": <string>,
+          "main_activity": <string>,
+          "package": <string>
+          "activities": <list<string>>
+          "permissions": <list<string>>
+	}
     }
 }
 ```
