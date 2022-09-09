@@ -43,6 +43,6 @@ class Android(Karton):
                     "type": "sample",
                     "stage": "analyzed",
                 },
-                payload={"attributes": metadata},
+                payload={"sample": sample, "attributes": metadata},
             )
         )

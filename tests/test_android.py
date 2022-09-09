@@ -22,6 +22,7 @@ class AndroidMagicTestCase(KartonTestCase):
                     "origin": "karton.android",
                 },
                 payload={
+                    "sample": sample,
                     'attributes': {
                       "certificate": ["61ED377E85D386A8DFEE6B864BD85B0BFAA5AF81"],
                       "main_activity": ["com.example.android.contactmanager..ContactManager"],
