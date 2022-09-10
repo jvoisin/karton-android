@@ -35,10 +35,10 @@ Extract various information from APK.
 
 First of all, make sure you have setup the core system: https://github.com/CERT-Polska/karton
 
-Then install karton-android from PyPi, as well as androguard
+Then install karton-android and run it:
 
 ```shell
-$ pip install karton-android androguard
+$ pip install git+https://github.com/jvoisin/karton-android
 
 $ karton-android
 ```
