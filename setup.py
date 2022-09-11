@@ -25,9 +25,7 @@ setup(
     include_package_data=True,
     install_requires=open("requirements.txt").read().splitlines(),
     entry_points={
-        'console_scripts': [
-            'karton-android=karton.android:Android.main'
-        ],
+        "console_scripts": ["karton-android=karton.android:Android.main"],
     },
     classifiers=[
         "Programming Language :: Python",
