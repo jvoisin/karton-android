@@ -24,18 +24,36 @@ class Android(Karton):
             return
 
         metadata = {
-            "package": [a.package],
             "activities": sorted(a.get_activities()),
             "main_activity": [a.get_main_activity()],
+            "package": [a.package.strip()],
             "permissions": sorted(a.get_permissions()),
         }
+
+        app_name = a.get_app_name().strip()
+        if app_name:
+            metadata["app_name"] = [app_name]
 
         if a.is_signed() or a.is_signed_v3():
             certs = a.get_certificates()
             if len(certs):
                 cert = certs[0]
                 sha1_cert = cert.sha1_fingerprint.replace(" ", "")
-                metadata["certificate"] = [sha1_cert]
+                cert_validity = cert["tbs_certificate"]["validity"]
+                not_before_raw = cert_validity["not_before"]
+                not_before = not_before_raw.native.strftime("%b %-d %X %Y %Z")
+                not_after_raw = cert_validity["not_after"]
+                not_after = not_after_raw.native.strftime("%b %-d %X %Y %Z")
+                metadata.update(
+                    {
+                        "certificate": [sha1_cert],
+                        "certificate_issuer": [cert.issuer.human_friendly],
+                        "certificate_not_after": [not_after],
+                        "certificate_not_before": [not_before],
+                        "certificate_serial": [cert.serial_number],
+                        "certificate_subject": [cert.subject.human_friendly],
+                    }
+                )
 
         self.send_task(
             Task(

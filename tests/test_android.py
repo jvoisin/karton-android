@@ -23,13 +23,44 @@ class AndroidMagicTestCase(KartonTestCase):
                 },
                 payload={
                     "sample": sample,
-                    'attributes': {
-                      "certificate": ["61ED377E85D386A8DFEE6B864BD85B0BFAA5AF81"],
-                      "main_activity": ["com.example.android.contactmanager..ContactManager"],
-                      "package": ["com.example.android.contactmanager"],
-                      "activities": ["com.example.android.contactmanager..ContactManager", "com.example.android.contactmanager.ContactAdder"],
-                      "permissions": ["android.permission.GET_ACCOUNTS", "android.permission.READ_CONTACTS", "android.permission.WRITE_CONTACTS"],
-                    }
+                    "attributes": {
+                        "certificate": ["61ED377E85D386A8DFEE6B864BD85B0BFAA5AF81"],
+                        "main_activity": [
+                            "com.example.android.contactmanager..ContactManager"
+                        ],
+                        "package": ["com.example.android.contactmanager"],
+                        "activities": [
+                            "com.example.android.contactmanager..ContactManager",
+                            "com.example.android.contactmanager.ContactAdder",
+                        ],
+                        "permissions": [
+                            "android.permission.GET_ACCOUNTS",
+                            "android.permission.READ_CONTACTS",
+                            "android.permission.WRITE_CONTACTS",
+                        ],
+                        "certificate_not_after": ["Jul 17 01:33:46 2035 UTC"],
+                        "certificate_serial": [10623618503190643167],
+                        "certificate_subject": [
+                            "Email Address: android@android.com,"
+                            " Common Name: Android,"
+                            " Organizational Unit: Android,"
+                            " Organization: Android,"
+                            " Locality: Mountain View,"
+                            " State/Province: California,"
+                            " Country: US"
+                        ],
+                        "certificate_not_before": ["Feb 29 01:33:46 2008 UTC"],
+                        "certificate_issuer": [
+                            "Email Address: android@android.com,"
+                            " Common Name: Android,"
+                            " Organizational Unit: Android,"
+                            " Organization: Android,"
+                            " Locality: Mountain View,"
+                            " State/Province: California,"
+                            " Country: US"
+                        ],
+                        "app_name": ["Contact Manager"],
+                    },
                 },
             )
             task = Task(
