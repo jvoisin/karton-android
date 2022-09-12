@@ -50,7 +50,7 @@ class Android(Karton):
                         "certificate_issuer": [cert.issuer.human_friendly],
                         "certificate_not_after": [not_after],
                         "certificate_not_before": [not_before],
-                        "certificate_serial": [cert.serial_number],
+                        "certificate_serial": [str(cert.serial_number)],
                         "certificate_subject": [cert.subject.human_friendly],
                     }
                 )
