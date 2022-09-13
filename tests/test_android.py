@@ -39,7 +39,7 @@ class AndroidMagicTestCase(KartonTestCase):
                             "android.permission.WRITE_CONTACTS",
                         ],
                         "certificate_not_after": ["Jul 17 01:33:46 2035 UTC"],
-                        "certificate_serial": [10623618503190643167],
+                        "certificate_serial": ["10623618503190643167"],
                         "certificate_subject": [
                             "Email Address: android@android.com,"
                             " Common Name: Android,"
